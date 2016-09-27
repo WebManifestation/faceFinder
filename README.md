@@ -1,1 +1,1 @@
-Time to test out the jquery.facedetection plugin by Jay Salvat on react.
+Taking a picture from cam and running face detection on it.
