@@ -2,6 +2,7 @@ import React from 'react';
 import $ from 'jquery';
 import faceDetection from 'jquery-facedetection';
 faceDetection($);
+import Webcam from 'webcamjs';
 
 class FaceFinder extends React.Component {
 	constructor(props) {
@@ -9,11 +10,14 @@ class FaceFinder extends React.Component {
 		this.state = {file: '',imagePreviewUrl: ''};
 	}
 
+	componentDidMount() {
+		Webcam.attach(this.refs.myCamera);
+	}
+
 	_handleSubmit(e) {
 		e.preventDefault();
-// TODO: do something with -> this.state.file
-console.log('handle uploading-', this.state.file);
-}
+		console.log('handle uploading-', this.state.file);
+	}
 
 _handleImageChange(e) {
 	e.preventDefault();
@@ -43,6 +47,12 @@ _handleFaceFind(e) {
 	});
 }
 
+_handleWebcamClick(e) {
+	Webcam.snap((dataUri)=> {
+		this.setState({ imagePreviewUrl: dataUri });
+	});
+}
+
 render() {
 	let {imagePreviewUrl} = this.state;
 	let $imagePreview = null;
@@ -62,6 +72,9 @@ render() {
 			<img className="faces" ref="faceImage" src={imagePreviewUrl} />
 		</div>
 		<button onClick={this._handleFaceFind.bind(this)}>FaceFind</button>
+		<div ref="myCamera" style={{ width:320, height:240 }}></div>
+   		<div ref="myResult"></div>
+		<button onClick={this._handleWebcamClick.bind(this)}>Click</button>
 		</div>
 		)
 }
