@@ -1,0 +1,1 @@
+Time to test out the jquery.facedetection plugin by Jay Salvat on react.

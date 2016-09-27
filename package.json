@@ -1,0 +1,41 @@
+{
+  "name": "blank-slate",
+  "version": "0.0.0",
+  "description": "A blank slate to start creating your react page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server",
+    "make": "NODE_ENV=prod webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WebManifestation/faceFinder"
+  },
+  "author": "Raphael Kottakal",
+  "bugs": {
+    "url": "https://github.com/WebManifestation/faceFinder/issues"
+  },
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "jquery-facedetection": "^1.0.0",
+    "normalize.css": "~4.1.1",
+    "react": "~15.1.0",
+    "react-dom": "~15.1.0",
+    "webcamjs": "^1.0.16"
+  },
+  "devDependencies": {
+    "babel-loader": "~6.2.4",
+    "react-hot-loader": "~1.3.0",
+    "webpack-dev-server": "~1.14.1",
+    "webpack": "~1.13.1",
+    "babel-preset-react": "~6.5.0",
+    "babel-core": "~6.9.1",
+    "babel-preset-es2015": "~6.9.0",
+    "file-loader": "~0.8.5",
+    "style-loader": "~0.13.1",
+    "css-loader": "~0.23.1",
+    "es6-promise": "~3.2.1",
+    "lodash": "~4.13.1"
+  }
+}
